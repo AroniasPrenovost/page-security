@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>TALHA</title>
+  <title>Secure Login Interface</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -18,7 +18,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>                        
         </button>
-        <a class="navbar-brand" href="#">Page Security Interface</a>
+        <a class="navbar-brand" href="#">Page Security Module</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
@@ -39,32 +39,284 @@
       </div>
     </div>
   </nav>
-  <div>
-    <div class="container" >
-      <div class="col-md-6" >
-        <div id="logbox"  >
-          <form id="signup" method="post">
-            <h1>Create an Account</h1>
-            <input name="username" 
-                  type="username" 
-                  placeholder="Username" 
-                  required="required" 
-                  class="input name"/>
-            <input name="email" 
-                   type="email" 
-                   placeholder="Email" 
-                   required="required" 
-                   class="input email"/>
-            <input name="password" 
-                   type="password" 
-                   placeholder="Enter Password" 
-                   required="required" 
-                   class="input pass"/>
-            <input type="submit" value="Sign me up!" class="inputButton"/>
-          </form>
-        </div>
-      </div><!--col-md-6-->
+  <script>
+    $(document).ready(function() {
+      var map = new google.maps.Map(document.getElementById('map_overlay'),  {
+        styles: [
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#6195a0"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.province",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "lightness": "0"
+            },
+            {
+                "saturation": "0"
+            },
+            {
+                "color": "#f5f5f2"
+            },
+            {
+                "gamma": "1"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.man_made",
+        "elementType": "all",
+        "stylers": [
+            {
+                "lightness": "-3"
+            },
+            {
+                "gamma": "1.00"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural.terrain",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#bae5ce"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 45
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#fac9a9"
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "color": "#4e4e4e"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#787878"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.station.airport",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "hue": "#0a00ff"
+            },
+            {
+                "saturation": "-77"
+            },
+            {
+                "gamma": "0.57"
+            },
+            {
+                "lightness": "0"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.station.rail",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#43321e"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.station.rail",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "hue": "#ff6c00"
+            },
+            {
+                "lightness": "4"
+            },
+            {
+                "gamma": "0.75"
+            },
+            {
+                "saturation": "-68"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#eaf6f8"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#c7eced"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "lightness": "-49"
+            },
+            {
+                "saturation": "-53"
+            },
+            {
+                "gamma": "0.79"
+            }
+        ]
+    }
+],
+    scrollwheel: false,
+    navigationControl: false,
+    mapTypeControl: false,
+    scaleControl: false,
+    zoomControl: false,
+    draggable: false,mapTypeId: google.maps.MapTypeId.ROADMAP, center: new google.maps.LatLng(47.640111, -122.332694), zoom:14 });
+    });
+  </script>
+  <div id="wrapper">
+    <div id="map_overlay"></div>
+    <div id="form_overlay"><!-- right hand stuff goes here -->
+      <div>
+        <!--<div class="container">-->
+        <div class="col-md-6" >
+          <div id="logbox">
+            <form id="signup" method="post">
+              <h1>Create an Account</h1>
+              <input name="username" 
+              type="username" 
+              placeholder="Username" 
+              required="required" 
+              class="input name"/>
+              <input name="email" 
+              type="email" 
+              placeholder="Email" 
+              required="required" 
+              class="input email"/>
+              <input name="password" 
+              type="password" 
+              placeholder="Enter Password" 
+              required="required" 
+              minlength="8"
+              maxlength="28"
+              class="input pass"/>
+              <input type="submit" value="Sign me up!" class="inputButton"/>
+            </form>
+          </div>
+        </div><!--col-md-6-->
+        <!--</div>-->
+      </div>
     </div>
-  </div>
+  </div> <!-- wrapper --> 
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"> </script>
 </body>
 </html>
