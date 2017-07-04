@@ -23,3 +23,5 @@ var UserSchema = new Schema({
 
 UserSchema.plugin(mongooseHidden);
 module.exports = mongoose.model('User', UserSchema, 'users');
+
+

@@ -29,4 +29,3 @@ app.post('/', controller.register);
 app.listen(port, function() {
 	console.log('app listening on port ' + port)
 });
-

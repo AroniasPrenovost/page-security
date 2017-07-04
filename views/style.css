@@ -11,10 +11,28 @@ body {
 .navbar {
     margin-bottom:0px;
 }
-
+.navbar-inverse {
+    background-color: #c7eced;
+    border-color:#c7eced;
+}
+.navbar-inverse .navbar-brand {
+    color: #fac9a9;
+}
 .navbar-brand{
     font-size: xx-large;
     font-weight: bold;
+    color:#fac9a9;
+}
+
+.btn-primary {
+    background-color: #fac9a9;
+    border-color: #fac9a9;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color:black;
 }
 
 #map_overlay { 
@@ -29,7 +47,7 @@ body {
     position: absolute; 
     background-color: transparent; 
     top:18%; 
-    right: 15%; 
+    right: 12%; 
     z-index: 99; 
     background: white; 
 }
@@ -93,18 +111,18 @@ h1, input {
     display: block;
     margin: 30px auto 30px;
     color: white;
-    background-color: #3CC;
+    background-color: #fac9a9;
     border: none;
-    -webkit-box-shadow: 0 5px 0 #2CADAD;
-    -moz-box-shadow: 0 5px 0 #2CADAD;
-    box-shadow: 0 5px 0 #2CADAD;
+    -webkit-box-shadow: 0 5px 0 #c7eced;
+    -moz-box-shadow: 0 5px 0 #c7eced;
+    box-shadow: 0 5px 0 #c7eced;
 }
 
 .inputButton:hover {
     top: 2px;
-    -webkit-box-shadow: 0 3px 0 #2CADAD;
-    -moz-box-shadow: 0 3px 0 #2CADAD;
-    box-shadow: 0 3px 0 #2CADAD;
+    -webkit-box-shadow: 0 3px 0 #fac9a9;
+    -moz-box-shadow: 0 3px 0 #fac9a9;
+    box-shadow: 0 3px 0 #fac9a9;
 }
 
 .inputButton:active {
